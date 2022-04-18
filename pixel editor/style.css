@@ -13,6 +13,10 @@
     display: inline;
 }
 
+.save_to_file {
+    display: inline;
+}
+
 .row {
     display: table-row;
 }
