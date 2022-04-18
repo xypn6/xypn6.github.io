@@ -1,5 +1,3 @@
-//test
-
 var penColour = "black"
 
 function changeColour(colour) {
@@ -68,4 +66,32 @@ function loadFromFile() {
     fr.readAsText(file.files[0]);
     console.log("pixel_data")
 
+}
+
+function saveToFile() {
+    var data = [];
+    for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 100; j++) {
+            var pos = i + "," + j;
+            var clr = document.getElementById(pos).style.backgroundColor;
+            console.log(clr);
+            var data2 = (pos + ";" + clr);
+            data += data2;
+            data += "\n"
+        }
+    }
+    console.log(data);
+    var fileName = "pixelData";
+
+    const blob = new Blob([data], { type: 'txt' });
+    if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, fileName);
+    } else {
+        var elem = window.document.createElement('a');
+        elem.href = window.URL.createObjectURL(blob);
+        elem.download = fileName;
+        document.body.appendChild(elem);
+        elem.click();
+        document.body.removeChild(elem);
+    }
 }
