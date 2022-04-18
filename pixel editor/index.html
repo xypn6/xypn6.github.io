@@ -5,6 +5,9 @@
     <script src="script.js"></script>
 </head>
 
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
 <body>
     <div>
         <input type="color" id="currentColour" onchange="changeColour(currentColour.value)">
@@ -14,6 +17,12 @@
         <p class="pixel_border">pixel borders: </p>
         <button class="pixel_border" type="button" onclick="togglePixelBordersOn()">on</button>
         <button class="pixel_border" type="button" onclick="togglePixelBordersOff()">off</button>
+    </div>
+
+    <div>
+        <p class="load_from_file">load from local file: </p>
+        <input type="file" class="load_from_file" name="inputfile" id="inputfile" onchange="loadFromFile()">
+        <button type="button" class="load_from_file" onclick="showInstructions()">instructions</button>
     </div>
 
     <div id="art">
