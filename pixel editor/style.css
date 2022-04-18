@@ -1,0 +1,25 @@
+#art {
+    display: table;
+    border-spacing: 0px;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.pixel_border {
+    display: inline;
+}
+
+.load_from_file {
+    display: inline;
+}
+
+.row {
+    display: table-row;
+}
+
+.pixel {
+    display: table-cell;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+}
